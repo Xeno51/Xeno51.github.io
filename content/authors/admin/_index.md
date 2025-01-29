@@ -42,9 +42,9 @@ profiles:
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/adriano-i-335624b3/
   - icon: academicons/google-scholar
-    url: https://https://scholar.google.com/citations?user=UpMsI_AAAAAJ&hl=it&oi=ao
+    url: https://scholar.google.com/citations?hl=en&user=UpMsI_AAAAAJ
   - icon: academicons/orcid
-    url: https://https://orcid.org/0009-0007-0167-8170
+    url: https://orcid.org/0009-0007-0167-8170
 
 # interests:
 #   - Quantum Cryptography
