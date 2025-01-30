@@ -1,8 +1,13 @@
 ---
-title: "An example preprint / working paper"
+title: "A Practical Protocol for Quantum Oblivious Transfer from One-Way Functions"
 authors:
+- Eleni Diamanti
+- Alex B. Grilo
 - admin
-date: "2019-04-07T00:00:00Z"
+- Pascal Lefebvre
+- Verena Yacoub
+- Álvaro Yángüez
+date: "2024-04-07T00:00:00Z"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -17,13 +22,14 @@ publication_types: ["article"]
 publication: ""
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: We present a new simulation-secure quantum oblivious transfer (QOT) protocol based on one-way functions in the plain model. With a focus on practical implementation, our protocol surpasses prior works in efficiency, promising feasible experimental realization. We address potential experimental errors and their correction, offering analytical expressions to facilitate the analysis of the required quantum resources. Technically, we achieve simulation security for QOT through an equivocal and relaxed-extractable quantum bit commitment.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
-- Large Language Models
+- Quantum Cryptography
+- Quantum Oblivious Transfer
 
 featured: true
 
