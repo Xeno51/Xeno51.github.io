@@ -182,5 +182,5 @@ profiles:
 
 ## About Me
 
-I am a PhD student in the Quantum Information Team of the LIP6 laboratory at Sorbonne Université. 
+I am a PhD student in the [Quantum Information Team](https://qi.lip6.fr/) of the LIP6 laboratory at Sorbonne Université.
 I am interested in implementing secure cryptographic protocols, leveraging the opportuninites offered by the adoption of quantum algorithms and infrastructures. My work has been focused on the development of a practical Quantum Oblivious Transfer scheme, together with the optical setup and the software framework required for its experimental realization.

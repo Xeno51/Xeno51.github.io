@@ -7,7 +7,7 @@
     <description>Adriano Innocenzi</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
+      <url>http://localhost:1313/media/icon_hu_c8d4be8b8cf6429.png</url>
       <title>Adriano Innocenzi</title>
       <link>http://localhost:1313/</link>
     </image>
@@ -303,7 +303,7 @@
 
 
 
-&lt;div id=&#34;chart-624781539&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-789615324&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   async function fetchChartJSON() {
     console.debug(&#39;Hugo Blox fetching chart JSON...&#39;)
@@ -321,7 +321,7 @@
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-624781539&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-789615324&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
