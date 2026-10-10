@@ -1,0 +1,14 @@
+{{- /*
+  Home: the three most recent entries of data/cv.yaml (experience), then a
+  link to the Curriculum vitæ page (left out in the single-file style vote).
+  Context: dict "page" "standalone".
+*/ -}}
+<section class="section" aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+  {{- partial "components/timeline.html" (first 3 hugo.Data.cv.experience) }}
+  {{- if not .standalone }}
+  {{- with site.GetPage "/cv" }}
+  <p class="more"><a href="{{ .RelPermalink }}">Full curriculum vitæ</a></p>
+  {{- end }}
+  {{- end }}
+</section>

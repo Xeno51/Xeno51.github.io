@@ -1,0 +1,10 @@
+{{- /*
+  Home: the About section. The text is content/_index.md.
+  Context: dict "page" (the home page) "standalone".
+*/ -}}
+<section class="section" aria-labelledby="about">
+  <h2 id="about">About</h2>
+  <div class="prose">
+    {{- .page.Content }}
+  </div>
+</section>

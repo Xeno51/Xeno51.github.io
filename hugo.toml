@@ -11,11 +11,9 @@ enableRobotsTXT = true
 
 [params]
   description = 'PhD student in the Quantum Information team at LIP6, Sorbonne Université, working on practical quantum oblivious transfer.'
-  # The site's style: assets/css/styles/<style>.css.
+  # The site's style: assets/css/styles/<style>.css. The other candidates
+  # live in the private design lab (design/ in the private repository).
   style = 'signal'
-  # The style switcher (layouts/_partials/style-lab.html) is off. The design
-  # lab, kept in the private repository, turns it on with its candidate styles.
-  styleLab = false
 
 [menus]
   [[menus.main]]

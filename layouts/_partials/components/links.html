@@ -1,0 +1,6 @@
+{{- /* The round profile buttons: data/profile.yaml (links), icons from components/icon.html. */ -}}
+<ul class="links">
+  {{- range hugo.Data.profile.links }}
+  <li><a href="{{ .url }}" title="{{ .label }}">{{ partial "components/icon.html" .icon }}<span class="link-label">{{ .label }}</span></a></li>
+  {{- end }}
+</ul>

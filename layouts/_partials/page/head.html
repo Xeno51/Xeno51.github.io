@@ -1,3 +1,4 @@
+{{- /* Every page's <head>: title, description, link previews (Open Graph), favicon, stylesheets. */ -}}
 {{- $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) -}}
 {{- $description := .Description | default site.Params.description -}}
 <meta charset="utf-8">
@@ -26,7 +27,7 @@
 
 {{- /* Apply a saved light/dark choice before the first paint. */}}
 <script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
-{{- partial "stylesheets.html" . }}
+{{- partial "page/stylesheets.html" . }}
 {{- if .IsHome }}
-{{- partial "jsonld-person.html" . }}
+{{- partial "page/jsonld-person.html" . }}
 {{- end }}

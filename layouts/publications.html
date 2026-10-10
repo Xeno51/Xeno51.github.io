@@ -1,3 +1,4 @@
+{{- /* The Publications page: data/publications.yaml, grouped by year. Title: content/publications.md. */ -}}
 {{ define "main" }}
 {{- $data := hugo.Data.publications }}
 <header class="page-header">
@@ -20,7 +21,7 @@
   <h2 id="y{{ $year }}">{{ $year }}</h2>
   <ol class="pubs">
     {{- range where $data.items "year" $year }}
-    {{- partial "pub.html" (dict "pub" . "me" $data.me) }}
+    {{- partial "components/pub.html" (dict "pub" . "me" $data.me) }}
     {{- end }}
   </ol>
 </section>

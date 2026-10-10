@@ -1,3 +1,4 @@
+{{- /* Tells search engines they may crawl everything, and where the sitemap is. */ -}}
 User-agent: *
 Allow: /
 

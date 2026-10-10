@@ -1,0 +1,26 @@
+{{- /*
+  Home: photo, role line, name, tagline, profile buttons.
+  Facts: data/profile.yaml. Photo: assets/images/avatar.png.
+  Context: dict "page" (the home page) "standalone" (true in the single-file
+  style vote: the photo is embedded in the HTML).
+*/ -}}
+{{- $p := hugo.Data.profile }}
+<section class="hero" aria-labelledby="hero-name">
+  {{- with resources.Get "images/avatar.png" }}
+  {{- with .Fill "300x300 Center webp q85" }}
+  {{- $src := .RelPermalink }}
+  {{- if $.standalone }}
+    {{- $src = printf "data:image/webp;base64,%s" (.Content | base64Encode) | safeURL }}
+  {{- end }}
+  <div class="hero-photo">
+    <img src="{{ $src }}" width="{{ .Width }}" height="{{ .Height }}" alt="Portrait of {{ $p.name }}">
+  </div>
+  {{- end }}
+  {{- end }}
+  <div class="hero-text">
+    <p class="hero-kicker">{{ $p.role }} · <a href="{{ $p.team_url }}">{{ $p.team }}</a>, {{ $p.lab }}, {{ $p.university }}</p>
+    <h1 class="hero-name" id="hero-name">{{ $p.name }}</h1>
+    <p class="hero-tagline">{{ $p.tagline }}</p>
+    {{- partial "components/links.html" . }}
+  </div>
+</section>

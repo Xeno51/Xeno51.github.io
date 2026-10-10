@@ -1,0 +1,12 @@
+{{- /*
+  base.css holds the layout and components; styles/<style>.css gives the
+  look (params.style in hugo.toml). data-style lets the private design lab
+  swap styles; it does nothing on the published site.
+*/ -}}
+{{- $style := site.Params.style -}}
+{{- with resources.Get "css/base.css" }}{{ with . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{- end }}{{ end }}
+{{- with resources.Get (printf "css/styles/%s.css" $style) }}{{ with . | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" data-style="{{ $style }}" media="all">
+{{- end }}{{ end }}

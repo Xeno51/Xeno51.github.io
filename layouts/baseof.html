@@ -1,22 +1,26 @@
+{{- /*
+  The frame of every page: head, header, the page's own content ("main"),
+  footer. The two lab hooks only exist when the private design lab is
+  loaded (design/lab.toml); on the published site they render nothing.
+*/ -}}
 <!doctype html>
 <html lang="en" data-style="{{ site.Params.style }}">
 <head>
-  {{- partial "head.html" . }}
+  {{- partial "page/head.html" . }}
+  {{- if templates.Exists "_partials/lab/head.html" }}{{ partial "lab/head.html" . }}{{ end }}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="frame">
-    {{- partial "header.html" . }}
+    {{- partial "page/header.html" . }}
     <main id="main" class="site-main">
       {{- block "main" . }}{{ end }}
     </main>
-    {{- partial "footer.html" . }}
+    {{- partial "page/footer.html" . }}
   </div>
-  {{- if partial "style-lab-enabled.html" . }}
-    {{- partial "style-lab.html" . }}
-  {{- end }}
   {{- with resources.Get "js/site.js" }}{{ with . | minify | fingerprint }}
   <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
   {{- end }}{{ end }}
+  {{- if templates.Exists "_partials/lab/body.html" }}{{ partial "lab/body.html" . }}{{ end }}
 </body>
 </html>

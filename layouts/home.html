@@ -1,3 +1,8 @@
+{{- /* The home page: its sections, in order (layouts/_partials/home/). */ -}}
 {{ define "main" }}
-{{- partial "home-sections.html" (dict "page" . "standalone" false "experience" true) }}
+{{- $context := dict "page" . "standalone" false }}
+{{- partial "home/hero.html" $context }}
+{{- partial "home/about.html" $context }}
+{{- partial "home/recent-publications.html" $context }}
+{{- partial "home/experience.html" $context }}
 {{ end }}

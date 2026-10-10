@@ -1,3 +1,4 @@
+{{- /* The Curriculum vitæ page: experience and education from data/cv.yaml. Title: content/cv.md. */ -}}
 {{ define "main" }}
 {{- $cv := hugo.Data.cv }}
 {{- $p := hugo.Data.profile }}
@@ -8,11 +9,11 @@
 
 <section class="section" aria-labelledby="cv-experience">
   <h2 id="cv-experience">Experience</h2>
-  {{- partial "timeline.html" $cv.experience }}
+  {{- partial "components/timeline.html" $cv.experience }}
 </section>
 
 <section class="section" aria-labelledby="cv-education">
   <h2 id="cv-education">Education</h2>
-  {{- partial "timeline.html" $cv.education }}
+  {{- partial "components/timeline.html" $cv.education }}
 </section>
 {{ end }}

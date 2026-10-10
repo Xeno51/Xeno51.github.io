@@ -1,0 +1,19 @@
+{{- /*
+  Home: the three newest papers (data/publications.yaml), then a link to the
+  Publications page (left out in the single-file style vote).
+  Context: dict "page" "standalone".
+*/ -}}
+{{- $data := hugo.Data.publications }}
+<section class="section" aria-labelledby="recent">
+  <h2 id="recent">Recent publications</h2>
+  <ol class="pubs">
+    {{- range first 3 (sort $data.items "year" "desc") }}
+    {{- partial "components/pub.html" (dict "pub" . "me" $data.me) }}
+    {{- end }}
+  </ol>
+  {{- if not .standalone }}
+  {{- with site.GetPage "/publications" }}
+  <p class="more"><a href="{{ .RelPermalink }}">All publications</a></p>
+  {{- end }}
+  {{- end }}
+</section>
