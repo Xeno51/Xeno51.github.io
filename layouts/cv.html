@@ -15,13 +15,4 @@
   <h2 id="cv-education">Education</h2>
   {{- partial "timeline.html" $cv.education }}
 </section>
-
-<section class="section" aria-labelledby="cv-publications">
-  <h2 id="cv-publications">Publications</h2>
-  <ol class="pubs">
-    {{- range hugo.Data.publications.items }}
-    {{- partial "pub.html" (dict "pub" . "me" hugo.Data.publications.me) }}
-    {{- end }}
-  </ol>
-</section>
 {{ end }}
