@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <p>© {{ now.Year }} {{ site.Title }}</p>
+  <p class="footer-links">
+    {{- range $i, $l := hugo.Data.profile.links }}
+    {{- if $i }} · {{ end }}<a href="{{ $l.url }}">{{ $l.label }}</a>
+    {{- end }}
+  </p>
+</footer>

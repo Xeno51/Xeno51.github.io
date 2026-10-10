@@ -1,0 +1,5 @@
+# Build output and caches: GitHub Actions rebuilds the site on every push
+public/
+resources/_gen/
+.hugo_build.lock
+node_modules/

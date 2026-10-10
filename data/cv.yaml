@@ -1,0 +1,29 @@
+# Professional facts only. Source: the CV of 2026-05-05 (material/cv/).
+# Private details (birth date, addresses, phone) never go here; neither do
+# grades, languages or skills (the owner's choice, 2026-10-10).
+
+experience:
+  - dates: 2023 – present
+    title: PhD student
+    place: LIP6, Sorbonne Université, Paris
+    detail: Quantum Information team. Practical quantum oblivious transfer, from the protocol to its experimental realization.
+  - dates: 2022 – 2023
+    title: Research assistant
+    place: LIP6, Sorbonne Université, Paris
+    detail: Secure multiparty computation systems, from design and analysis to development.
+  - dates: 2022
+    title: Master's thesis internship
+    place: LIP6, Sorbonne Université, Paris
+  - dates: 2021 – 2022
+    title: Erasmus+ exchange
+    place: Sorbonne Université, Faculté des Sciences et Ingénierie, Paris
+
+education:
+  - dates: 2019 – 2022
+    title: MSc in Engineering Physics, Photonics and Nano Optics
+    place: Politecnico di Milano
+    detail: Thesis, "Theoretical analysis and experimental demonstration of quantum oblivious transfer".
+  - dates: 2016 – 2019
+    title: BSc in Engineering Physics
+    place: Politecnico di Milano
+    detail: Thesis, "Electronic Spin Resonance".

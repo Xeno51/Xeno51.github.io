@@ -1,0 +1,24 @@
+# Who the site is about. Sources: the old site (2025-01) and the CV (2026-05).
+name: Adriano Innocenzi
+role: PhD student
+team: Quantum Information team
+lab: LIP6
+university: Sorbonne Université
+city: Paris
+team_url: https://qi.lip6.fr/
+tagline: Practical quantum oblivious transfer, from the protocol to the optical setup and the software that runs it.
+
+# `icon` is a name from layouts/_partials/icon.html.
+links:
+  - label: E-mail
+    icon: email
+    url: mailto:adriano.innocenzi@lip6.fr
+  - label: Google Scholar
+    icon: scholar
+    url: https://scholar.google.com/citations?user=UpMsI_AAAAAJ
+  - label: ORCID
+    icon: orcid
+    url: https://orcid.org/0009-0007-0167-8170
+  - label: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/adriano-i-335624b3/

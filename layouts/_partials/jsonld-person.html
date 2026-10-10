@@ -1,0 +1,20 @@
+{{- $p := hugo.Data.profile -}}
+{{- $sameAs := slice -}}
+{{- range $p.links }}
+  {{- if not (hasPrefix .url "mailto:") }}
+    {{- $sameAs = $sameAs | append .url }}
+  {{- end }}
+{{- end -}}
+{{- $person := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" $p.name
+  "url" site.Home.Permalink
+  "jobTitle" $p.role
+  "affiliation" (dict "@type" "Organization" "name" (printf "%s, %s" $p.lab $p.university) "url" $p.team_url)
+  "sameAs" $sameAs
+-}}
+{{- with resources.Get "images/avatar.png" }}
+  {{- $person = merge $person (dict "image" (.Fill "300x300 Center webp q85").Permalink) }}
+{{- end }}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>

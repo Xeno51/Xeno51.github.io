@@ -1,0 +1,38 @@
+baseURL = 'https://xeno51.github.io/'
+locale = 'en-US'
+title = 'Adriano Innocenzi'
+
+disableKinds = ['rss', 'taxonomy', 'term']
+enableRobotsTXT = true
+
+[module.hugoVersion]
+  extended = true
+  min = '0.167.0'
+
+[params]
+  description = 'PhD student in the Quantum Information team at LIP6, Sorbonne Université, working on practical quantum oblivious transfer.'
+  # The site's style: assets/css/styles/<style>.css.
+  style = 'signal'
+  # The style switcher (layouts/_partials/style-lab.html) is off. The design
+  # lab, kept in the private repository, turns it on with its candidate styles.
+  styleLab = false
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Publications'
+    pageRef = '/publications'
+    weight = 20
+  [[menus.main]]
+    name = 'Curriculum vitæ'
+    pageRef = '/cv'
+    weight = 30
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[sitemap]
+  changeFreq = 'monthly'

@@ -1,0 +1,42 @@
+{{- /* One publication. Context: dict "pub" <entry of data/publications.yaml> "me" <owner's name>. */ -}}
+{{- $p := .pub -}}
+{{- $me := .me -}}
+<li class="pub" id="{{ $p.id }}">
+  <p class="pub-title">
+    {{- with $p.arxiv }}<a href="https://arxiv.org/abs/{{ . }}">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end -}}
+  </p>
+  <p class="pub-authors">
+    {{- range $i, $a := $p.authors }}
+    {{- if $i }}, {{ end }}
+    {{- if eq $a $me }}<strong class="me">{{ $a }}</strong>{{ else }}{{ $a }}{{ end }}
+    {{- end -}}
+  </p>
+  <p class="pub-venue">
+    <span>{{ $p.venue }}{{ with $p.arxiv }} arXiv:{{ . }}{{ end }}</span> · <span>{{ $p.year }}</span>
+    {{- with $p.note }} · <span class="pub-note">{{ . }}</span>{{ end -}}
+  </p>
+  {{- with $p.tags }}
+  <ul class="tags" aria-label="Topics">
+    {{- range . }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  {{- end }}
+  {{- with $p.arxiv }}
+  <p class="pub-actions">
+    <a class="btn" href="https://arxiv.org/abs/{{ . }}">arXiv</a>
+    <a class="btn" href="https://arxiv.org/pdf/{{ . }}">PDF</a>
+  </p>
+  {{- end }}
+  {{- with $p.abstract }}
+  <details class="pub-more">
+    <summary>Abstract</summary>
+    <p>{{ . }}</p>
+  </details>
+  {{- end }}
+  <details class="pub-more">
+    <summary>BibTeX</summary>
+    <div class="bibtex">
+      <pre><code>{{ partial "bibtex.html" $p }}</code></pre>
+      <button class="btn copy" type="button" data-copy>Copy</button>
+    </div>
+  </details>
+</li>

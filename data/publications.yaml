@@ -1,0 +1,64 @@
+# One entry per work, newest first. `me` is the owner's name as it appears in
+# `authors`, highlighted on the page.
+me: Adriano Innocenzi
+
+items:
+  - id: laurentpuig2026unconditional
+    title: Unconditional Authentication in Quantum Key Distribution via Hybrid Entangled Physical Unclonable Functions
+    authors:
+      - Nicolas Laurent-Puig
+      - Mina Doosti
+      - Adriano Innocenzi
+      - Eleni Diamanti
+    year: 2026
+    venue: arXiv preprint
+    arxiv: '2605.04650'
+    arxiv_class: quant-ph
+    # arXiv v1 2026-05-06; checked 2026-10-10, no journal reference.
+    tags:
+      - Quantum key distribution
+      - Authentication
+      - Physical unclonable functions
+    abstract: >-
+      Quantum Key Distribution (QKD) enables Information-Theoretically Secure
+      (ITS) key exchange, robust even against future quantum computing
+      threats. However, a fundamental limitation of QKD is the requirement for
+      an authenticated classical channel, which necessitates a pre-shared
+      secret key. In this work, we address this challenge by adopting a Hybrid
+      Entangled Physical Unclonable Function (PUF) protocol for
+      authentication. We demonstrate that this PUF-based method generates an
+      ITS initial key under minimal explicit hardware assumptions. This
+      approach allows us to experimentally perform a fully ITS-authenticated
+      entanglement-based QKD protocol that relies solely on such assumptions,
+      effectively eliminating the need for pre-shared secrets. This represents
+      a significant step towards the practical realization of quantum network
+      protocols using lightweight, readily available hardware assumptions,
+      without weakening security guarantees.
+
+  - id: diamanti2024practical
+    title: A Practical Protocol for Quantum Oblivious Transfer from One-Way Functions
+    authors:
+      - Eleni Diamanti
+      - Alex B. Grilo
+      - Adriano Innocenzi
+      - Pascal Lefebvre
+      - Verena Yacoub
+      - Álvaro Yángüez
+    year: 2024
+    venue: arXiv preprint
+    arxiv: '2406.09110'
+    arxiv_class: quant-ph
+    # arXiv v1 2024-06-13; v4 2026-05-29 ("31 pages, benchmarking added").
+    note: Updated May 2026 (v4)
+    tags:
+      - Quantum cryptography
+      - Oblivious transfer
+    abstract: >-
+      We present a new simulation-secure quantum oblivious transfer (QOT)
+      protocol based on one-way functions in the plain model. With a focus on
+      practical implementation, our protocol surpasses prior works in
+      efficiency, promising feasible experimental realization. We address
+      potential experimental errors and their correction, offering analytical
+      expressions to facilitate the analysis of the required quantum
+      resources. Technically, we achieve simulation security for QOT through
+      an equivocal and relaxed-extractable quantum bit commitment.

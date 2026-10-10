@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{- $cv := hugo.Data.cv }}
+{{- $p := hugo.Data.profile }}
+<header class="page-header">
+  <h1 class="page-title">{{ .Title }}</h1>
+  <p class="page-lead">{{ $p.role }}, {{ $p.team }}, {{ $p.lab }}, {{ $p.university }}.</p>
+</header>
+
+<section class="section" aria-labelledby="cv-experience">
+  <h2 id="cv-experience">Experience</h2>
+  {{- partial "timeline.html" $cv.experience }}
+</section>
+
+<section class="section" aria-labelledby="cv-education">
+  <h2 id="cv-education">Education</h2>
+  {{- partial "timeline.html" $cv.education }}
+</section>
+
+<section class="section" aria-labelledby="cv-publications">
+  <h2 id="cv-publications">Publications</h2>
+  <ol class="pubs">
+    {{- range hugo.Data.publications.items }}
+    {{- partial "pub.html" (dict "pub" . "me" hugo.Data.publications.me) }}
+    {{- end }}
+  </ol>
+</section>
+{{ end }}

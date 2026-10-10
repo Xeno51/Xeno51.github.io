@@ -1,0 +1,82 @@
+/* Signal: Swiss energy, warmer. Big name, numbered sections, a vermilion accent. */
+
+:root {
+  color-scheme: light;
+  --bg: #fffdfa;
+  --surface: #f6f1ec;
+  --fg: #1a1614;
+  --muted: #6a605a;
+  --accent: #c2361b;
+  --border: #e9e1d9;
+  --font-body: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --frame: 68rem;
+  --measure: 44rem;
+  --radius: 999px;
+  --photo-size: 176px;
+  --photo-radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #141110; --surface: #1f1a18; --fg: #f3ede8; --muted: #a99e96;
+    --accent: #ff7a5c; --border: #352d29;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141110; --surface: #1f1a18; --fg: #f3ede8; --muted: #a99e96;
+  --accent: #ff7a5c; --border: #352d29;
+}
+
+a { color: var(--fg); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+a:hover { color: var(--accent); }
+
+.brand { font-size: 1.15rem; font-weight: 750; letter-spacing: -0.02em; }
+.brand::after { content: "."; color: var(--accent); }
+.site-nav a { color: var(--fg); font-weight: 500; }
+.site-nav a[aria-current="page"] { color: var(--accent); text-decoration: none; }
+
+.hero { padding-top: 3.25rem; gap: 2.5rem; }
+.hero-photo img { box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 24%, transparent); }
+.hero-kicker { color: var(--muted); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-kicker a { color: inherit; text-decoration: none; }
+.hero-name { font-size: clamp(2.1rem, 5vw, 3.1rem); font-weight: 750; letter-spacing: -0.035em; line-height: 1.02; }
+.hero-tagline { font-size: 1.2rem; line-height: 1.45; }
+
+/* Profile links as round icon buttons; the label stays for screen readers */
+.links { gap: 0.6rem; }
+.links a {
+  display: inline-grid; place-items: center;
+  width: 2.75rem; height: 2.75rem; padding: 0;
+  border-color: var(--fg); border-radius: 999px;
+}
+.links .icon { width: 1.25rem; height: 1.25rem; }
+.links .link-label {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.links a:hover { border-color: var(--accent); background: var(--accent); color: var(--bg); }
+
+/* Numbered sections */
+.site-main { counter-reset: sec; }
+.section { margin-top: 3.5rem; }
+.section > h2 {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  padding-top: 0.75rem; border-top: 1px solid var(--border);
+  font-size: 1.5rem; font-weight: 750; letter-spacing: -0.02em;
+}
+.section > h2::before {
+  counter-increment: sec; content: counter(sec, decimal-leading-zero);
+  color: var(--accent); font-size: 0.9rem; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.page-title { font-size: clamp(1.9rem, 4.2vw, 2.6rem); font-weight: 750; letter-spacing: -0.03em; }
+
+.pub-title { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+.pub-title a:hover { color: var(--accent); }
+.tags li { border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); background: none; color: var(--accent); }
+.btn { border-color: var(--fg); font-weight: 600; }
+.btn:hover { border-color: var(--accent); background: var(--accent); color: var(--bg); }
+.bibtex pre { border-radius: 8px; }
+.entry-dates { color: var(--accent); font-weight: 700; }
+.entry-title { font-weight: 700; }

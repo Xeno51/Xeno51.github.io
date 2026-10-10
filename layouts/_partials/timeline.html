@@ -1,0 +1,15 @@
+{{- /* A list of dated entries (data/cv.yaml: experience or education). */ -}}
+<ol class="timeline">
+  {{- range . }}
+  <li class="entry">
+    <p class="entry-dates">{{ .dates }}</p>
+    <div class="entry-body">
+      <h3 class="entry-title">{{ .title }}</h3>
+      <p class="entry-place">{{ .place }}</p>
+      {{- with .detail }}
+      <p class="entry-detail">{{ . }}</p>
+      {{- end }}
+    </div>
+  </li>
+  {{- end }}
+</ol>

@@ -1,0 +1,19 @@
+{{- /* BibTeX for one publication, in arXiv's own format. "First Last" becomes "Last, First". */ -}}
+{{- $names := slice -}}
+{{- range .authors }}
+  {{- $parts := split . " " }}
+  {{- $n := len $parts }}
+  {{- $names = $names | append (printf "%s, %s" (index $parts (sub $n 1)) (delimit (first (sub $n 1) $parts) " ")) }}
+{{- end -}}
+@misc{ {{- .id }},
+  title         = { {{- .title -}} },
+  author        = { {{- delimit $names " and " -}} },
+  year          = { {{- .year -}} },
+{{- with .arxiv }}
+  eprint        = { {{- . -}} },
+  archivePrefix = {arXiv},
+{{- end }}
+{{- with .arxiv_class }}
+  primaryClass  = { {{- . -}} },
+{{- end }}
+}

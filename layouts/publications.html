@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- $data := hugo.Data.publications }}
+<header class="page-header">
+  <h1 class="page-title">{{ .Title }}</h1>
+  <p class="page-lead">
+    Also listed on
+    {{- range $i, $l := where hugo.Data.profile.links "label" "in" (slice "Google Scholar" "ORCID") }}
+    {{- if $i }} and{{ end }} <a href="{{ $l.url }}">{{ $l.label }}</a>
+    {{- end }}.
+  </p>
+</header>
+
+{{- $years := slice }}
+{{- range $data.items }}
+  {{- if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}
+{{- end }}
+{{- range sort $years "value" "desc" }}
+{{- $year := . }}
+<section class="section year-group" aria-labelledby="y{{ $year }}">
+  <h2 id="y{{ $year }}">{{ $year }}</h2>
+  <ol class="pubs">
+    {{- range where $data.items "year" $year }}
+    {{- partial "pub.html" (dict "pub" . "me" $data.me) }}
+    {{- end }}
+  </ol>
+</section>
+{{- end }}
+{{ end }}

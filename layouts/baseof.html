@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" data-style="{{ site.Params.style }}">
+<head>
+  {{- partial "head.html" . }}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="frame">
+    {{- partial "header.html" . }}
+    <main id="main" class="site-main">
+      {{- block "main" . }}{{ end }}
+    </main>
+    {{- partial "footer.html" . }}
+  </div>
+  {{- if partial "style-lab-enabled.html" . }}
+    {{- partial "style-lab.html" . }}
+  {{- end }}
+  {{- with resources.Get "js/site.js" }}{{ with . | minify | fingerprint }}
+  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+  {{- end }}{{ end }}
+</body>
+</html>
