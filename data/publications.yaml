@@ -3,6 +3,38 @@
 me: Adriano Innocenzi
 
 items:
+  - id: diamanti2024practical
+    title: A Practical Protocol for Quantum Oblivious Transfer from One-Way Functions
+    authors:
+      - Eleni Diamanti
+      - Alex B. Grilo
+      - Adriano Innocenzi
+      - Pascal Lefebvre
+      - Verena Yacoub
+      - Álvaro Yángüez
+    year: 2026
+    journal: Quantum
+    volume: 10
+    pages: '2124'
+    doi: 10.22331/q-2026-06-01-2124
+    arxiv: '2406.09110'
+    arxiv_class: quant-ph
+    # Published in Quantum on 2026-06-01 (journal page and arXiv journal-ref
+    # checked 2026-10-21); arXiv v1 2024-06-13, v4 2026-05-29. The id keeps
+    # its 2024 name so the page anchor stays stable.
+    tags:
+      - Quantum cryptography
+      - Oblivious transfer
+    abstract: >-
+      We present a new simulation-secure quantum oblivious transfer (QOT)
+      protocol based on one-way functions in the plain model. With a focus on
+      practical implementation, our protocol surpasses prior works in
+      efficiency, promising feasible experimental realization. We address
+      potential experimental errors and their correction, offering analytical
+      expressions to facilitate the analysis of the required quantum
+      resources. Technically, we achieve simulation security for QOT through
+      an equivocal and relaxed-extractable quantum bit commitment.
+
   - id: laurentpuig2026unconditional
     title: Unconditional Authentication in Quantum Key Distribution via Hybrid Entangled Physical Unclonable Functions
     authors:
@@ -34,31 +66,3 @@ items:
       a significant step towards the practical realization of quantum network
       protocols using lightweight, readily available hardware assumptions,
       without weakening security guarantees.
-
-  - id: diamanti2024practical
-    title: A Practical Protocol for Quantum Oblivious Transfer from One-Way Functions
-    authors:
-      - Eleni Diamanti
-      - Alex B. Grilo
-      - Adriano Innocenzi
-      - Pascal Lefebvre
-      - Verena Yacoub
-      - Álvaro Yángüez
-    year: 2024
-    venue: arXiv preprint
-    arxiv: '2406.09110'
-    arxiv_class: quant-ph
-    # arXiv v1 2024-06-13; v4 2026-05-29 ("31 pages, benchmarking added").
-    note: Updated May 2026 (v4)
-    tags:
-      - Quantum cryptography
-      - Oblivious transfer
-    abstract: >-
-      We present a new simulation-secure quantum oblivious transfer (QOT)
-      protocol based on one-way functions in the plain model. With a focus on
-      practical implementation, our protocol surpasses prior works in
-      efficiency, promising feasible experimental realization. We address
-      potential experimental errors and their correction, offering analytical
-      expressions to facilitate the analysis of the required quantum
-      resources. Technically, we achieve simulation security for QOT through
-      an equivocal and relaxed-extractable quantum bit commitment.

@@ -1,9 +1,12 @@
-{{- /* One publication. Context: dict "pub" <entry of data/publications.yaml> "me" <owner's name>. */ -}}
+{{- /* One publication. Context: dict "pub" <entry of data/publications.yaml> "me" <owner's name>.
+  A published paper has journal, volume, pages and doi; a preprint has venue. */ -}}
 {{- $p := .pub -}}
 {{- $me := .me -}}
+{{- $doiURL := "" }}{{ with $p.doi }}{{ $doiURL = printf "https://doi.org/%s" . }}{{ end -}}
 <li class="pub" id="{{ $p.id }}">
   <p class="pub-title">
-    {{- with $p.arxiv }}<a href="https://arxiv.org/abs/{{ . }}">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end -}}
+    {{- if $doiURL }}<a href="{{ $doiURL }}">{{ $p.title }}</a>
+    {{- else }}{{ with $p.arxiv }}<a href="https://arxiv.org/abs/{{ . }}">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end }}{{ end -}}
   </p>
   <p class="pub-authors">
     {{- range $i, $a := $p.authors }}
@@ -12,7 +15,12 @@
     {{- end -}}
   </p>
   <p class="pub-venue">
+    {{- if $p.journal }}
+    {{- $ref := printf "%s %v, %v" $p.journal $p.volume $p.pages }}
+    <span>{{ if $doiURL }}<a href="{{ $doiURL }}">{{ $ref }}</a>{{ else }}{{ $ref }}{{ end }}{{ with $p.arxiv }} · arXiv:{{ . }}{{ end }}</span> · <span>{{ $p.year }}</span>
+    {{- else }}
     <span>{{ $p.venue }}{{ with $p.arxiv }} arXiv:{{ . }}{{ end }}</span> · <span>{{ $p.year }}</span>
+    {{- end }}
     {{- with $p.note }} · <span class="pub-note">{{ . }}</span>{{ end -}}
   </p>
   {{- with $p.tags }}
@@ -20,10 +28,15 @@
     {{- range . }}<li>{{ . }}</li>{{ end }}
   </ul>
   {{- end }}
-  {{- with $p.arxiv }}
+  {{- if or $doiURL $p.arxiv }}
   <p class="pub-actions">
+    {{- if $doiURL }}
+    <a class="btn" href="{{ $doiURL }}">Journal</a>
+    {{- end }}
+    {{- with $p.arxiv }}
     <a class="btn" href="https://arxiv.org/abs/{{ . }}">arXiv</a>
     <a class="btn" href="https://arxiv.org/pdf/{{ . }}">PDF</a>
+    {{- end }}
   </p>
   {{- end }}
   {{- with $p.abstract }}
